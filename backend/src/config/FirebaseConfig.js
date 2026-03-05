@@ -10,14 +10,20 @@ class FirebaseConfig {
 
             let serviceAccount;
             if (process.env.FIREBASE_SERVICE_ACCOUNT) {
+                console.log('Attempting to initialize Firebase using FIREBASE_SERVICE_ACCOUNT environment variable');
                 try {
                     serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT);
+                    if (serviceAccount.private_key) {
+                        console.log('Private key found in environment variable credentials');
+                    } else {
+                        console.warn('Private key NOT found in environment variable credentials');
+                    }
                 } catch (parseError) {
                     console.error('Failed to parse FIREBASE_SERVICE_ACCOUNT env variable:', parseError.message);
                     throw parseError;
                 }
             } else {
-                // serviceAccountKey.json is in the backend root folder
+                console.log('FIREBASE_SERVICE_ACCOUNT env variable not found. Falling back to local serviceAccountKey.json');
                 const serviceAccountPath = path.resolve(__dirname, '../../serviceAccountKey.json');
                 serviceAccount = require(serviceAccountPath);
             }
