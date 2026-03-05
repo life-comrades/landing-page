@@ -12,7 +12,19 @@ class FirebaseConfig {
             if (process.env.FIREBASE_SERVICE_ACCOUNT) {
                 console.log('Attempting to initialize Firebase using FIREBASE_SERVICE_ACCOUNT environment variable');
                 try {
-                    serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT);
+                    let rawEnv = process.env.FIREBASE_SERVICE_ACCOUNT.trim();
+                    // Handle case where env var is wrapped in quotes
+                    if ((rawEnv.startsWith("'") && rawEnv.endsWith("'")) || (rawEnv.startsWith('"') && rawEnv.endsWith('"'))) {
+                        rawEnv = rawEnv.substring(1, rawEnv.length - 1);
+                    }
+
+                    let parsed = JSON.parse(rawEnv);
+                    // If it's still a string after one parse, parse it AGAIN (handles extra quotes)
+                    if (typeof parsed === 'string') {
+                        console.log('Parsed as string, attempting second parse');
+                        parsed = JSON.parse(parsed);
+                    }
+                    serviceAccount = parsed;
 
                     // Fix: Handle multiline private keys that might be improperly escaped in env variables
                     if (serviceAccount.private_key && typeof serviceAccount.private_key === 'string') {
