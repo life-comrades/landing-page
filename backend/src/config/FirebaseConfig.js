@@ -13,10 +13,16 @@ class FirebaseConfig {
                 console.log('Attempting to initialize Firebase using FIREBASE_SERVICE_ACCOUNT environment variable');
                 try {
                     serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT);
-                    if (serviceAccount.private_key) {
-                        console.log('Private key found in environment variable credentials');
+
+                    // Fix: Handle multiline private keys that might be improperly escaped in env variables
+                    if (serviceAccount.private_key && typeof serviceAccount.private_key === 'string') {
+                        if (serviceAccount.private_key.includes('\\n')) {
+                            console.log('Applying fix for escaped newline characters in private_key');
+                            serviceAccount.private_key = serviceAccount.private_key.replace(/\\n/g, '\n');
+                        }
+                        console.log('Private key found and validated in environment variable credentials');
                     } else {
-                        console.warn('Private key NOT found in environment variable credentials');
+                        console.warn('Private key NOT found or invalid in environment variable credentials');
                     }
                 } catch (parseError) {
                     console.error('Failed to parse FIREBASE_SERVICE_ACCOUNT env variable:', parseError.message);
