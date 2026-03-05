@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/joshu/hype_workspace/life_comrades/frontend/src/app/%28pages%29/services/layout.tsx"],"sourcesContent":["import { getISRData } from '@/lib/api';\r\n\r\nexport const revalidate = 3600;\r\n\r\nexport async function generateMetadata() {\r\n    const { content, metadata } = await getISRData();\r\n    const m = metadata?.services || content.pagesMetadata?.services || content.globalMetadata || {};\r\n    return {\r\n        title: m.title,\r\n        description: m.description,\r\n        keywords: m.keywords,\r\n    };\r\n}\r\n\r\nexport default function ServicesLayout({\r\n    children,\r\n}: {\r\n    children: React.ReactNode;\r\n}) {\r\n    return <>{children}</>;\r\n}\r\n"],"names":[],"mappings":";;;;;;;;;AAAA;;;AAEO,MAAM,aAAa;AAEnB,eAAe;IAClB,MAAM,EAAE,OAAO,EAAE,QAAQ,EAAE,GAAG,MAAM,IAAA,8KAAU;IAC9C,MAAM,IAAI,UAAU,YAAY,QAAQ,aAAa,EAAE,YAAY,QAAQ,cAAc,IAAI,CAAC;IAC9F,OAAO;QACH,OAAO,EAAE,KAAK;QACd,aAAa,EAAE,WAAW;QAC1B,UAAU,EAAE,QAAQ;IACxB;AACJ;AAEe,SAAS,eAAe,EACnC,QAAQ,EAGX;IACG,qBAAO;kBAAG;;AACd"}}]
+}

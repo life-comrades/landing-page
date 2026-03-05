@@ -1,0 +1,22 @@
+{
+  "/(auth)/login/page": "app/(auth)/login/page.js",
+  "/(pages)/about/page": "app/(pages)/about/page.js",
+  "/(pages)/blogs/[id]/page": "app/(pages)/blogs/[id]/page.js",
+  "/(pages)/blogs/page": "app/(pages)/blogs/page.js",
+  "/(pages)/book/page": "app/(pages)/book/page.js",
+  "/(pages)/contact/page": "app/(pages)/contact/page.js",
+  "/(pages)/jobs/[id]/page": "app/(pages)/jobs/[id]/page.js",
+  "/(pages)/jobs/page": "app/(pages)/jobs/page.js",
+  "/(pages)/services/[id]/page": "app/(pages)/services/[id]/page.js",
+  "/(pages)/services/page": "app/(pages)/services/page.js",
+  "/_global-error/page": "app/_global-error/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/admin/applications/page": "app/admin/applications/page.js",
+  "/admin/bookings/page": "app/admin/bookings/page.js",
+  "/admin/login/page": "app/admin/login/page.js",
+  "/admin/nurses/page": "app/admin/nurses/page.js",
+  "/admin/page": "app/admin/page.js",
+  "/admin/patients/page": "app/admin/patients/page.js",
+  "/admin/settings/page": "app/admin/settings/page.js",
+  "/page": "app/page.js"
+}

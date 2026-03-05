@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/joshu/hype_workspace/life_comrades/frontend/src/app/%28pages%29/services/page.tsx"],"sourcesContent":["\"use client\";\r\n\r\nimport { useEffect } from 'react';\r\nimport { useRouter } from 'next/navigation';\r\n\r\nexport default function ServicesPage() {\r\n    const router = useRouter();\r\n\r\n    useEffect(() => {\r\n        router.push('/#services');\r\n    }, [router]);\r\n\r\n    return <div className=\"min-vh-100 bg-white\"></div>;\r\n}\r\n"],"names":[],"mappings":";;;;;AAEA;AACA;AAHA;;;;AAKe,SAAS;IACpB,MAAM,SAAS,IAAA,8LAAS;IAExB,IAAA,iQAAS,EAAC;QACN,OAAO,IAAI,CAAC;IAChB,GAAG;QAAC;KAAO;IAEX,qBAAO,6RAAC;QAAI,WAAU;;;;;;AAC1B"}}]
+}

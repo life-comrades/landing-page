@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --primary: #0D9488;
+  --primary-dark: #0F766E;
+  --primary-light: #F0FDFA;
+  --secondary: #64748B;
+  --dark: #1E293B;
+  --light: #F8FAFC;
+  --background: #ffffff;
+  --foreground: #1E293B;
+
+  /* Bootstrap Color Overrides */
+  --bs-primary: #0D9488;
+  --bs-primary-rgb: 13, 148, 136;
+  --bs-body-bg: #F9FAFB;
+  --bs-body-color: #1E293B;
+  --bs-font-sans-serif: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+body {
+  background-color: var(--bs-body-bg);
+  color: var(--bs-body-color);
+  font-family: var(--bs-font-sans-serif);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom Teal Utilities (Tailwind-like but for Bootstrap) */
+.bg-teal-50 {
+  background-color: #F0FDFA !important;
+}
+
+.bg-teal-100 {
+  background-color: #CCFBF1 !important;
+}
+
+.bg-teal-500 {
+  background-color: #14B8A6 !important;
+}
+
+.bg-teal-600 {
+  background-color: #0D9488 !important;
+}
+
+.text-teal-500 {
+  color: #14B8A6 !important;
+}
+
+.text-teal-600 {
+  color: #0D9488 !important;
+}
+
+.text-teal-700 {
+  color: #0F766E !important;
+}
+
+.border-teal-500 {
+  border-color: #14B8A6 !important;
+}
+
+.border-teal-600 {
+  border-color: #0D9488 !important;
+}
+
+.btn-teal-600 {
+  background-color: #0D9488 !important;
+  border-color: #0D9488 !important;
+  color: #ffffff !important;
+  transition: all 0.3s ease;
+}
+
+.btn-teal-600:hover {
+  background-color: #0F766E !important;
+  border-color: #0F766E !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 12px rgba(13, 148, 136, 0.2);
+}
+
+.rounded-xl {
+  border-radius: 0.75rem !important;
+}
+
+.rounded-2xl {
+  border-radius: 1rem !important;
+}
+
+.rounded-3xl {
+  border-radius: 1.5rem !important;
+}
+
+/* Existing Overrides */
+.btn-primary {
+  background-color: var(--primary) !important;
+  border-color: var(--primary) !important;
+  border-radius: 8px;
+  padding: 8px 16px;
+  transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-dark) !important;
+  border-color: var(--primary-dark) !important;
+}
+
+/* Shadows & Transitions */
+.shadow-xs {
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05) !important;
+}
+
+.shadow-sm {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06) !important;
+}
+
+.shadow-md {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
+}
+
+.shadow-lg {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+}
+
+.transition-300 {
+  transition: all 0.3s ease;
+}
+
+.hover-shadow:hover {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04) !important;
+  transform: translateY(-5px);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.7s ease-out;
+}
+
+/* Pagination & Tabs Overrides */
+.nav-tabs .nav-link {
+  border: none;
+  color: var(--secondary);
+  font-weight: 500;
+  padding: 0.75rem 1.25rem;
+  transition: all 0.2s;
+}
+
+.nav-tabs .nav-link.active {
+  color: var(--primary);
+  background: none;
+  border-bottom: 2px solid var(--primary);
+}

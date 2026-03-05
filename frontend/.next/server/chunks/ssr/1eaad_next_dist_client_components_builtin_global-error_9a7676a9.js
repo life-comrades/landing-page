@@ -1,0 +1,3 @@
+module.exports=[43913,(a,b,c)=>{let{createClientModuleProxy:d}=a.r(57910);a.n(d("[project]/hype_workspace/life_comrades/frontend/node_modules/next/dist/client/components/builtin/global-error.js <module evaluation>"))},11463,(a,b,c)=>{let{createClientModuleProxy:d}=a.r(57910);a.n(d("[project]/hype_workspace/life_comrades/frontend/node_modules/next/dist/client/components/builtin/global-error.js"))},90993,a=>{"use strict";a.i(43913);var b=a.i(11463);a.n(b)}];
+
+//# sourceMappingURL=1eaad_next_dist_client_components_builtin_global-error_9a7676a9.js.map

@@ -1,0 +1,3 @@
+module.exports=[84964,a=>{"use strict";var b=a.i(64963),c=a.i(77884);async function d(){let{content:a,metadata:b}=await (0,c.getISRData)(),d=b?.services||a.pagesMetadata?.services||a.globalMetadata||{};return{title:d.title,description:d.description,keywords:d.keywords}}function e({children:a}){return(0,b.jsx)(b.Fragment,{children:a})}a.s(["default",()=>e,"generateMetadata",()=>d,"revalidate",0,3600])}];
+
+//# sourceMappingURL=bd715_workspace_life_comrades_frontend_src_app_%28pages%29_services_layout_tsx_7ea34a59._.js.map

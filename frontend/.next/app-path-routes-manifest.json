@@ -1,0 +1,22 @@
+{
+  "/(auth)/login/page": "/login",
+  "/(pages)/about/page": "/about",
+  "/(pages)/blogs/[id]/page": "/blogs/[id]",
+  "/(pages)/blogs/page": "/blogs",
+  "/(pages)/book/page": "/book",
+  "/(pages)/contact/page": "/contact",
+  "/(pages)/jobs/[id]/page": "/jobs/[id]",
+  "/(pages)/jobs/page": "/jobs",
+  "/(pages)/services/[id]/page": "/services/[id]",
+  "/(pages)/services/page": "/services",
+  "/_global-error/page": "/_global-error",
+  "/_not-found/page": "/_not-found",
+  "/admin/applications/page": "/admin/applications",
+  "/admin/bookings/page": "/admin/bookings",
+  "/admin/login/page": "/admin/login",
+  "/admin/nurses/page": "/admin/nurses",
+  "/admin/page": "/admin",
+  "/admin/patients/page": "/admin/patients",
+  "/admin/settings/page": "/admin/settings",
+  "/page": "/"
+}
