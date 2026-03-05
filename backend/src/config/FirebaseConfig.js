@@ -7,9 +7,20 @@ class FirebaseConfig {
             if (admin.apps.length > 0) {
                 return admin.firestore();
             }
-            // serviceAccountKey.json is in the backend root folder
-            const serviceAccountPath = path.resolve(__dirname, '../../serviceAccountKey.json');
-            const serviceAccount = require(serviceAccountPath);
+
+            let serviceAccount;
+            if (process.env.FIREBASE_SERVICE_ACCOUNT) {
+                try {
+                    serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT);
+                } catch (parseError) {
+                    console.error('Failed to parse FIREBASE_SERVICE_ACCOUNT env variable:', parseError.message);
+                    throw parseError;
+                }
+            } else {
+                // serviceAccountKey.json is in the backend root folder
+                const serviceAccountPath = path.resolve(__dirname, '../../serviceAccountKey.json');
+                serviceAccount = require(serviceAccountPath);
+            }
 
             admin.initializeApp({
                 credential: admin.credential.cert(serviceAccount)
@@ -19,8 +30,6 @@ class FirebaseConfig {
             return admin.firestore();
         } catch (error) {
             console.error('Failed to initialize Firebase Admin SDK:', error.message);
-            // In a real application, you might want to throw this error 
-            // or handle it more gracefully depending on if DB is critical
             throw error;
         }
     }
