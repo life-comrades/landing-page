@@ -1,6 +1,6 @@
 import { WebsiteContent, ServicesData, BlogPost, Job, Testimonial, BookingResponse } from '../types';
 
-const API_BASE_URL = 'http://localhost:5000/api';
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'https://backend-api-gray.vercel.app/api';
 
 export type { BookingResponse };
 
